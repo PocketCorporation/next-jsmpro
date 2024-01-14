@@ -1,3 +1,4 @@
+import Filters from '@/components/Filters'
 import SearchForm from '@/components/SearchForm'
 import React from 'react'
 
@@ -11,7 +12,7 @@ export default function Page() {
             <SearchForm />
         </section>
 
-        Filters
+        <Filters />
     </main>
   )
 }
