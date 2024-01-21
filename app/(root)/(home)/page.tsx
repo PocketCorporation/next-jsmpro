@@ -1,4 +1,5 @@
 import Filters from '@/components/Filters'
+import ResourceCard from '@/components/ResourceCard'
 import SearchForm from '@/components/SearchForm'
 import { getResources } from '@/sanity/actions'
 import React from 'react'
@@ -21,6 +22,28 @@ const Page = async () =>  {
         </section>
 
         <Filters />
+
+        <section className="flex-center mt-6 w-full flex-col sm:mt-20">
+          Header
+          <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
+            {resources?.length>0?(
+              resources.map((resource: any) =>(
+                <ResourceCard
+                  key={resource._id}
+                  title={resource.title}
+                  id={resource._id}
+                  image={resource.image}
+                  downloadNumber={resource.views}
+                  slug={resource._id}
+                />
+              ))
+            ): (
+              <p className="body-regular text-white-400">
+                No fesources found
+              </p>
+            )}
+          </div>
+        </section>
     </main>
   )
 }
