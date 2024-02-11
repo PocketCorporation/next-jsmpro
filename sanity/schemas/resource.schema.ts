@@ -34,7 +34,7 @@ const schema = {
             type: 'image',
             validation: (Rule: any)=>Rule.required(),
             options: {
-                hotsopt: true,
+                hotspot: true,
             }
         },
         {
